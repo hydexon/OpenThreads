@@ -84,6 +84,81 @@ _GENERATE_ATOMIC_WORKER(
         return __sync_fetch_and_xor( static_cast< int32_t volatile* >( &rAtomic ), value );
     } )
 
+//----- 64 bit
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Exchange,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return __sync_val_compare_and_swap( static_cast< int64_t volatile* >( &rAtomic ), *static_cast< int64_t volatile* >( &rAtomic ), value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    CompareExchange,
+    ( int64_t volatile & rAtomic, int64_t value, int64_t compare ),
+    {
+        return __sync_val_compare_and_swap( static_cast< int64_t volatile* >( &rAtomic ), compare, value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Increment,
+    ( int64_t volatile & rAtomic ),
+    {
+        return __sync_add_and_fetch( static_cast< int64_t volatile* >( &rAtomic ), 1 );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Decrement,
+    ( int64_t volatile & rAtomic ),
+    {
+        return __sync_sub_and_fetch( static_cast< int64_t volatile* >( &rAtomic ), 1 );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Add,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return __sync_fetch_and_add( static_cast< int64_t volatile* >( &rAtomic ), value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Subtract,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return __sync_fetch_and_sub( static_cast< int64_t volatile* >( &rAtomic ), value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    And,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return __sync_fetch_and_and( static_cast< int64_t volatile* >( &rAtomic ), value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Or,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return __sync_fetch_and_or( static_cast< int64_t volatile* >( &rAtomic ), value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Xor,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return __sync_fetch_and_xor( static_cast< int64_t volatile* >( &rAtomic ), value );
+    } )
+
+//----- 64 bit ends.
+
 _GENERATE_ATOMIC_WORKER(
     void*,
     ExchangePointer,

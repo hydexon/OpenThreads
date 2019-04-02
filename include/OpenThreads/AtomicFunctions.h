@@ -298,6 +298,300 @@ namespace OpenThreads
 	/// @return  Original integer value prior to updating.
 	OPENTHREAD_EXPORT_DIRECTIVE int32_t AtomicXorUnsafe( int32_t volatile & rAtomic, int32_t value );
 
+	// ---- 64-bit integer variant
+		/// Atomically swap the current value of a 64-bit integer with another value, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	///
+	/// @return  Original integer value upon swapping.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicExchange( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically swap the current value of a 64-bit integer with another value, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	///
+	/// @return  Original integer value upon swapping.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicExchangeAcquire( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically swap the current value of a 64-bit integer with another value, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	///
+	/// @return  Original integer value upon swapping.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicExchangeRelease( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically swap the current value of a 64-bit integer with another value, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	///
+	/// @return  Original integer value upon swapping.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicExchangeUnsafe( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically compare the current value of a 64-bit integer with another value, swapping in a different value if
+	/// the values match, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	/// @param[in] compare  Value against which to compare.
+	///
+	/// @return  Original integer value when the comparison occurred.  If this is the same as @c compare, the integer's
+	///          value will have been updated to match @c value, otherwise it will have been left unchanged.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicCompareExchange( int64_t volatile & rAtomic, int64_t value, int64_t compare );
+
+	/// Atomically compare the current value of a 64-bit integer with another value, swapping in a different value if
+	/// the values match, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	/// @param[in] compare  Value against which to compare.
+	///
+	/// @return  Original integer value when the comparison occurred.  If this is the same as @c compare, the integer's
+	///          value will have been updated to match @c value, otherwise it will have been left unchanged.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicCompareExchangeAcquire( int64_t volatile & rAtomic, int64_t value, int64_t compare );
+
+	/// Atomically compare the current value of a 64-bit integer with another value, swapping in a different value if
+	/// the values match, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	/// @param[in] compare  Value against which to compare.
+	///
+	/// @return  Original integer value when the comparison occurred.  If this is the same as @c compare, the integer's
+	///          value will have been updated to match @c value, otherwise it will have been left unchanged.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicCompareExchangeRelease( int64_t volatile & rAtomic, int64_t value, int64_t compare );
+
+	/// Atomically compare the current value of a 64-bit integer with another value, swapping in a different value if
+	/// the values match, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to swap.
+	/// @param[in] compare  Value against which to compare.
+	///
+	/// @return  Original integer value when the comparison occurred.  If this is the same as @c compare, the integer's
+	///          value will have been updated to match @c value, otherwise it will have been left unchanged.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicCompareExchangeUnsafe( int64_t volatile & rAtomic, int64_t value, int64_t compare );
+
+	/// Atomically increment a 64-bit integer, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after incrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicIncrement( int64_t volatile & rAtomic );
+
+	/// Atomically increment a 64-bit integer, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after incrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicIncrementAcquire( int64_t volatile & rAtomic );
+
+	/// Atomically increment a 64-bit integer, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after incrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicIncrementRelease( int64_t volatile & rAtomic );
+
+	/// Atomically increment a 64-bit integer, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after incrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicIncrementUnsafe( int64_t volatile & rAtomic );
+
+	/// Atomically decrement a 64-bit integer, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after decrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicDecrement( int64_t volatile & rAtomic );
+
+	/// Atomically decrement a 64-bit integer, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after decrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicDecrementAcquire( int64_t volatile & rAtomic );
+
+	/// Atomically decrement a 64-bit integer, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after decrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicDecrementRelease( int64_t volatile & rAtomic );
+
+	/// Atomically decrement a 64-bit integer, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	///
+	/// @return  New value after decrementing.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicDecrementUnsafe( int64_t volatile & rAtomic );
+
+	/// Atomically add a value to a 64-bit integer, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to add.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAdd( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically add a value to a 64-bit integer, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to add.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAddAcquire( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically add a value to a 64-bit integer, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to add.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAddRelease( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically add a value to a 64-bit integer, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to add.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAddUnsafe( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically subtract a value from a 64-bit integer, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to subtract.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicSubtract( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically subtract a value from a 64-bit integer, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to subtract.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicSubtractAcquire( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically subtract a value from a 64-bit integer, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to subtract.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicSubtractRelease( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically subtract a value from a 64-bit integer, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value to subtract.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicSubtractUnsafe( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically AND a 64-bit integer with another value, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to AND.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAnd( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically AND a 64-bit integer with another value, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to AND.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAndAcquire( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically AND a 64-bit integer with another value, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to AND.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAndRelease( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically AND a 64-bit integer with another value, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to AND.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicAndUnsafe( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically OR a 64-bit integer with another value, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to OR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicOr( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically OR a 64-bit integer with another value, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to OR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicOrAcquire( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically OR a 64-bit integer with another value, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to OR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicOrRelease( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically OR a 64-bit integer with another value, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to OR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicOrUnsafe( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically XOR a 64-bit integer with another value, with full memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to XOR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicXor( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically XOR a 64-bit integer with another value, with acquire semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to XOR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicXorAcquire( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically XOR a 64-bit integer with another value, with release semantics.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to XOR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicXorRelease( int64_t volatile & rAtomic, int64_t value );
+
+	/// Atomically XOR a 64-bit integer with another value, without any memory barriers.
+	///
+	/// @param[in] rAtomic  Integer to update.
+	/// @param[in] value    Value with which to XOR.
+	///
+	/// @return  Original integer value prior to updating.
+	OPENTHREAD_EXPORT_DIRECTIVE int64_t AtomicXorUnsafe( int64_t volatile & rAtomic, int64_t value );
+	// ---- end 64-bit integer variant
+
 	/// Atomically swap the current value of pointer with another value, with full memory barriers.
 	///
 	/// @param[in] rAtomic  Pointer to update.

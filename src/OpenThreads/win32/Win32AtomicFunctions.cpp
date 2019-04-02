@@ -116,7 +116,123 @@ _GENERATE_ATOMIC_WORKER(
         return originalValueNew;
     } )
 
-#if !defined( HELIUM_CPU_X86_32 )
+//--- 64 begins
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Exchange,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return _InterlockedExchange64( reinterpret_cast< volatile LONG64* >( &rAtomic ), value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    CompareExchange,
+    ( int64_t volatile & rAtomic, int64_t value, int64_t compare ),
+    {
+        return _InterlockedCompareExchange64( reinterpret_cast< volatile LONG64* >( &rAtomic ), value, compare );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Increment,
+    ( int64_t volatile & rAtomic ),
+    {
+        return _InterlockedIncrement64( reinterpret_cast< volatile LONG64* >( &rAtomic ) );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Decrement,
+    ( int64_t volatile & rAtomic ),
+    {
+        return _InterlockedDecrement64( reinterpret_cast< volatile LONG64* >( &rAtomic ) );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Add,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return _InterlockedExchangeAdd64( reinterpret_cast< volatile LONG64* >( &rAtomic ), value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Subtract,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        return _InterlockedExchangeAdd64( reinterpret_cast< volatile LONG64* >( &rAtomic ), -value );
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    And,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        int64_t originalValueNew = rAtomic;
+        int64_t originalValueOld;
+        do
+        {
+            originalValueOld = originalValueNew;
+            originalValueNew = _InterlockedCompareExchange64(
+                reinterpret_cast< volatile LONG64* >( &rAtomic ),
+                originalValueOld & value,
+                originalValueOld );
+        } while( originalValueNew != originalValueOld );
+
+        return originalValueNew;
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Or,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        int64_t originalValueNew = rAtomic;
+        int64_t originalValueOld;
+        do
+        {
+            originalValueOld = originalValueNew;
+            originalValueNew = _InterlockedCompareExchange64(
+                reinterpret_cast< volatile LONG64* >( &rAtomic ),
+                originalValueOld | value,
+                originalValueOld );
+        } while( originalValueNew != originalValueOld );
+
+        return originalValueNew;
+    } )
+
+_GENERATE_ATOMIC_WORKER(
+    int64_t,
+    Xor,
+    ( int64_t volatile & rAtomic, int64_t value ),
+    {
+        int64_t originalValueNew = rAtomic;
+        int64_t originalValueOld;
+        do
+        {
+            originalValueOld = originalValueNew;
+            originalValueNew = _InterlockedCompareExchange64(
+                reinterpret_cast< volatile LONG64* >( &rAtomic ),
+                originalValueOld ^ value,
+                originalValueOld );
+        } while( originalValueNew != originalValueOld );
+
+        return originalValueNew;
+    } )
+
+//--- 64-bit ends
+#if _WIN32 || _WIN64
+#if _WIN64
+#define ENVIRONMENT64
+#else
+#define ENVIRONMENT32
+#endif
+#endif
+
+#if !defined( ENVIRONMENT32 )
 
 _GENERATE_ATOMIC_WORKER(
     void*,
