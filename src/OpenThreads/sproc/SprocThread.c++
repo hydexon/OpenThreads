@@ -26,7 +26,7 @@
 #include <signal.h>
 #include <unistd.h>
 #include <list>
-#include <OpenThreads/Thread>
+#include <OpenThreads/Thread.h>
 #include "SprocMutexPrivateData.h"
 #include "SprocThreadPrivateData.h"
 #include "SprocThreadPrivateActions.h"

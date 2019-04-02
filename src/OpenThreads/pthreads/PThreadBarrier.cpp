@@ -19,7 +19,7 @@
 
 #include <stdio.h>
 #include <unistd.h>
-#include <OpenThreads/Barrier>
+#include <OpenThreads/Barrier.h>
 #include "PThreadBarrierPrivateData.h"
 
 using namespace OpenThreads;

@@ -23,8 +23,8 @@
 #include <ulocks.h>
 #include <stack>
 
-#include <OpenThreads/Thread>
-#include <OpenThreads/Block>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Block.h>
 #include "SprocThreadPrivateActions.h"
 
 namespace OpenThreads {

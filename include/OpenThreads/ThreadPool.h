@@ -23,8 +23,8 @@
 #ifndef _OPENTHREADS_THREADPOOL_
 #define _OPENTHREADS_THREADPOOL_
 
-#include <OpenThreads/Thread>
-#include <OpenThreads/Condition>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Condition.h>
 #include <map>
 #include <list>
 #include <memory>

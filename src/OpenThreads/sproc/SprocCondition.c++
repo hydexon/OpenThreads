@@ -16,9 +16,9 @@
 // SprocCondition.c++ - C++ Condition class built on sprocs.
 // ~~~~~~~~~~~~~~~~~~
 
-#include <OpenThreads/Condition>
+#include <OpenThreads/Condition.h>
 #include "SprocConditionPrivateData.h"
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Mutex.h>
 #include "SharedArena.h"
 #include "SprocThreadPrivateActions.h"
 #include <errno.h>

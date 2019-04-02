@@ -15,7 +15,7 @@
 #define _OPENTHREADS_ATOMIC_
 
 #include <OpenThreads/Config>
-#include <OpenThreads/Exports>
+#include <OpenThreads/Exports.h>
 
 #if defined(_OPENTHREADS_ATOMIC_USE_BSD_ATOMIC)
 # include <libkern/OSAtomic.h>

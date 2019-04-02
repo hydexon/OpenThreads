@@ -26,8 +26,8 @@
 #include <ulocks.h>
 #include <list>
 
-#include <OpenThreads/Mutex>
-#include <OpenThreads/Condition>
+#include <OpenThreads/Mutex.h>
+#include <OpenThreads/Condition.h>
 
 namespace OpenThreads {
 

@@ -19,12 +19,12 @@
 #define _SPROCBARRIERPRIVATEDATA_H_
 
 #include <ulocks.h>
-#include <OpenThreads/Barrier>
+#include <OpenThreads/Barrier.h>
 
 #ifndef USE_IRIX_NATIVE_BARRIER
 
-#include <OpenThreads/Condition>
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Condition.h>
+#include <OpenThreads/Mutex.h>
 
 #endif
 

@@ -14,8 +14,8 @@
 #ifndef _OPENTHREADS_READWRITEMUTEX_
 #define _OPENTHREADS_READWRITEMUTEX_
 
-#include <OpenThreads/Thread>
-#include <OpenThreads/ReentrantMutex>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/ReentrantMutex.h>
 
 namespace OpenThreads {
 

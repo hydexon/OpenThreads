@@ -14,7 +14,7 @@
 #ifndef OPENTHREADS_VERSION
 #define OPENTHREADS_VERSION 1
 
-#include <OpenThreads/Exports>
+#include <OpenThreads/Exports.h>
 
 extern "C" {
 

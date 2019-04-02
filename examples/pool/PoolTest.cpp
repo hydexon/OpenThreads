@@ -16,7 +16,7 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#include <OpenThreads/ThreadPool>
+#include <OpenThreads/ThreadPool.h>
 #include <OpenThreads/ScopedLock>
 #include <memory>
 #include <iostream>
@@ -75,7 +75,7 @@ OpenThreads::Mutex Task::_s_mutex;
 typedef std::vector<Task> Tasks;
 
 
-typedef std::unique_ptr<OpenThreads::WorkerThread> WorkerPtr;
+typedef std::unique_ptr<OpenThreads::WorkerThread.h> WorkerPtr;
 typedef std::vector<WorkerPtr> Workers;
 
 void createTasks(Tasks& tasks, int num = 10)

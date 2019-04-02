@@ -14,9 +14,9 @@
 #ifndef _OPENTHREADS_REENTRANTMUTEX_
 #define _OPENTHREADS_REENTRANTMUTEX_
 
-#include <OpenThreads/Thread>
-#include <OpenThreads/Mutex>
-#include <OpenThreads/ScopedLock>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Mutex.h>
+#include <OpenThreads/ScopedLock.h>
 
 namespace OpenThreads {
 

@@ -19,8 +19,8 @@
 #ifndef _QTBARRIERPRIVATEDATA_H_
 #define _QTBARRIERPRIVATEDATA_H_
 
-#include <OpenThreads/Mutex>
-#include <OpenThreads/Condition>
+#include <OpenThreads/Mutex.h>
+#include <OpenThreads/Condition.h>
 
 class QtBarrierPrivateData
 {

@@ -18,8 +18,8 @@
 #ifndef _Win32BARRIERPRIVATEDATA_H_
 #define _Win32BARRIERPRIVATEDATA_H_
 
-#include <OpenThreads/Mutex>
-#include <OpenThreads/Condition>
+#include <OpenThreads/Mutex.h>
+#include <OpenThreads/Condition.h>
 
 namespace OpenThreads {
 

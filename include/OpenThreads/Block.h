@@ -14,10 +14,10 @@
 #ifndef _OPENTHREADS_BLOCK_
 #define _OPENTHREADS_BLOCK_
 
-#include <OpenThreads/Thread>
-#include <OpenThreads/Barrier>
-#include <OpenThreads/Condition>
-#include <OpenThreads/ScopedLock>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Barrier.h>
+#include <OpenThreads/Condition.h>
+#include <OpenThreads/ScopedLock.h>
 
 namespace OpenThreads {
 

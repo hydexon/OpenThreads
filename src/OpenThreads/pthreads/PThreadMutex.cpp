@@ -19,7 +19,7 @@
 
 #include <unistd.h>
 #include <pthread.h>
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Mutex.h>
 #include "PThreadMutexPrivateData.h"
 
 using namespace OpenThreads;

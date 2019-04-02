@@ -16,7 +16,7 @@
 // SprocThreadPrivateActions.c++ - Thread private actions for sprocs
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#include <OpenThreads/Thread>
+#include <OpenThreads/Thread.h>
 #include <list>
 
 #ifndef SPROC_THREAD_PRIVATE_ACTIONS

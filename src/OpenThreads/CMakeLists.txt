@@ -50,16 +50,18 @@ ENDIF()
 
 SET(HEADER_PATH ${OpenThreads_SOURCE_DIR}/include/OpenThreads)
 SET(OpenThreads_PUBLIC_HEADERS
-    ${HEADER_PATH}/Atomic
-    ${HEADER_PATH}/Barrier
-    ${HEADER_PATH}/Block
-    ${HEADER_PATH}/Condition
-    ${HEADER_PATH}/Exports
-    ${HEADER_PATH}/Mutex
-    ${HEADER_PATH}/ReadWriteMutex
-    ${HEADER_PATH}/ReentrantMutex
-    ${HEADER_PATH}/ScopedLock
-    ${HEADER_PATH}/Thread
+    ${HEADER_PATH}/Atomic.h
+    ${HEADER_PATH}/AtomicFunctions.h
+    ${HEADER_PATH}/Barrier.h
+    ${HEADER_PATH}/Block.h
+    ${HEADER_PATH}/Condition.h
+    ${HEADER_PATH}/Exports.h
+    ${HEADER_PATH}/Mutex.h
+    ${HEADER_PATH}/ReadWriteMutex.h
+    ${HEADER_PATH}/ReentrantMutex.h
+    ${HEADER_PATH}/ScopedLock.h
+    ${HEADER_PATH}/Thread.h
+    ${HEADER_PATH}/Spinlock.h 
     ${OPENTHREADS_VERSION_HEADER}
     ${OPENTHREADS_CONFIG_HEADER}
 )
@@ -67,6 +69,10 @@ SET(OpenThreads_COMMON_SOURCE
 	${CMAKE_CURRENT_SOURCE_DIR}/common/Atomic.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/common/Version.cpp
 )
+
+if(NOT WIN32)
+    SET(OpenThreads_COMMON_SOURCE ${OpenThreads_COMMON_SOURCE} ${CMAKE_CURRENT_SOURCE_DIR}/common/AtomicFunctions.cpp)
+endif()
 
 if (USE_THREAD_POOL)
 	list(APPEND OpenThreads_PUBLIC_HEADERS ${HEADER_PATH}/ThreadPool)

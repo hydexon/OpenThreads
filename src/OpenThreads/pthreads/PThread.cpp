@@ -52,7 +52,7 @@
     #endif
 #endif
 
-#include <OpenThreads/Thread>
+#include <OpenThreads/Thread.h>
 #include "PThreadPrivateData.h"
 
 #include <iostream>

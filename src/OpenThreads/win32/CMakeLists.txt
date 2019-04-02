@@ -20,6 +20,7 @@ ADD_LIBRARY(${LIB_NAME}
     Win32Thread.cpp
     Win32ThreadBarrier.cpp
     Win32ThreadPrivateData.h
+    Win32AtomicFunctions.cpp
 	${OpenThreads_COMMON_SOURCE}
     ${OPENTHREADS_VERSIONINFO_RC}
 )

@@ -20,7 +20,7 @@
 #ifndef _OPENTHREADS_MUTEX_
 #define _OPENTHREADS_MUTEX_
 
-#include <OpenThreads/Exports>
+#include <OpenThreads/Exports.h>
 
 namespace OpenThreads {
 

@@ -19,9 +19,9 @@
 #ifndef _QTTHREADPRIVATEDATA_H_
 #define _QTTHREADPRIVATEDATA_H_
 
-#include <OpenThreads/Thread>
-#include <OpenThreads/Block>
-#include <QThread>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Block.h>
+#include <QThread.h>
 
 struct QtThreadCanceled {};
 

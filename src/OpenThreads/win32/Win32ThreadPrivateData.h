@@ -17,8 +17,8 @@
 #ifndef _Win32PRIVATEDATA_H_
 #define _Win32PRIVATEDATA_H_
 
-#include <OpenThreads/Thread>
-#include <OpenThreads/Block>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Block.h>
 #include "HandleHolder.h"
 
 namespace OpenThreads {

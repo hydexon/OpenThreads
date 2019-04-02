@@ -21,7 +21,7 @@
 #define _PTHREADBARRIERPRIVATEDATA_H_
 
 #include <pthread.h>
-#include <OpenThreads/Barrier>
+#include <OpenThreads/Barrier.h>
 
 namespace OpenThreads {
 

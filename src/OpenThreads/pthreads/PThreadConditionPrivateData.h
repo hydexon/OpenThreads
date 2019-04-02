@@ -21,7 +21,7 @@
 #define _PTHREADCONDITIONPRIVATEDATA_H_
 
 #include <pthread.h>
-#include <OpenThreads/Condition>
+#include <OpenThreads/Condition.h>
 
 namespace OpenThreads {
 

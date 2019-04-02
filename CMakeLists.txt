@@ -98,7 +98,7 @@ ENDIF ()
 # This is for an advanced option to give aggressive warnings 
 # under different compilers. If yours is not implemented, this option
 # will not be made available.
-IF(CMAKE_COMPILER_IS_GNUCXX)
+IF(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # To be complete, we might also do GNUCC flags, 
     # but everything here is C++ code.
     # FYI, if we do implement GNUCC, then -Wmissing-prototypes in another 
@@ -119,7 +119,7 @@ ELSE(CMAKE_COMPILER_IS_GNUCXX)
         # to be listed below. If unhandled, OPENTHREADS_AGGRESSIVE_WARNING_FLAGS should 
         # remain unset.
     ENDIF(MSVC)
-ENDIF(CMAKE_COMPILER_IS_GNUCXX)
+ENDIF()
 
 # This part is for the CMake menu option to toggle the warnings on/off.
 # This will only be made available if we set values for OPENTHREADS_AGGRESSIVE_WARNING_FLAGS.

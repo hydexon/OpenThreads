@@ -20,7 +20,7 @@
 #ifndef _OPENTHREADS_BARRIER_
 #define _OPENTHREADS_BARRIER_
 
-#include <OpenThreads/Exports>
+#include <OpenThreads/Exports.h>
 
 namespace OpenThreads {
 

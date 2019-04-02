@@ -20,7 +20,7 @@
 #define _SPROCMUTEXPRIVATEDATA_H_
 
 #include <ulocks.h>
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Mutex.h>
 
 namespace OpenThreads {
 

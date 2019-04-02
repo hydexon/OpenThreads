@@ -21,9 +21,9 @@
 #include <cstdio>
 #include <iostream>
 #include <vector>
-#include <OpenThreads/Thread>
-#include <OpenThreads/Mutex>
-#include <OpenThreads/Barrier>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Mutex.h>
+#include <OpenThreads/Barrier.h>
 #include "ThreadObserver.h"
 #include "ThreadReporter.h"
 #include <cstdlib>

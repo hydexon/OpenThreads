@@ -14,7 +14,7 @@
  * OpenSceneGraph Public License for more details.
 */
 
-#include <OpenThreads/ThreadPool>
+#include <OpenThreads/ThreadPool.h>
 #include <OpenThreads/ScopedLock>
 #include <algorithm>
 #include <assert.h>

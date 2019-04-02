@@ -39,10 +39,10 @@ extern int errno;
 //-----------------------------------------------------------------------------
 // For the threads
 //
-#include <OpenThreads/Thread>
-#include <OpenThreads/Mutex>
-#include <OpenThreads/Condition>
-#include <OpenThreads/Barrier>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Mutex.h>
+#include <OpenThreads/Condition.h>
+#include <OpenThreads/Barrier.h>
 
 #define DEBUG
 #ifdef DEBUG

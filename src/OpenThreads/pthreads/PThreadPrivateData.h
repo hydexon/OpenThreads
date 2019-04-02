@@ -20,9 +20,9 @@
 #define _PTHREADPRIVATEDATA_H_
 
 #include <pthread.h>
-#include <OpenThreads/Thread>
-#include <OpenThreads/Block>
-#include <OpenThreads/Atomic>
+#include <OpenThreads/Thread.h>
+#include <OpenThreads/Block.h>
+#include <OpenThreads/Atomic.h>
 
 namespace OpenThreads {
 

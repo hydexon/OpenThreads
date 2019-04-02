@@ -19,8 +19,8 @@
 #ifndef _QTCONDITIONPRIVATEDATA_H_
 #define _QTCONDITIONPRIVATEDATA_H_
 
-#include <OpenThreads/Condition>
-#include <QWaitCondition>
+#include <OpenThreads/Condition.h>
+#include <QWaitCondition.h>
 
 class QtConditionPrivateData : public QWaitCondition
 {

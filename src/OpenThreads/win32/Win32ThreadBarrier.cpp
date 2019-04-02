@@ -16,9 +16,9 @@
 // ~~~~~~~~~~~~~~~~~~
 //
 
-#include  <OpenThreads/Barrier>
-#include  <OpenThreads/Thread>
-#include  <OpenThreads/ScopedLock>
+#include  <OpenThreads/Barrier.h>
+#include  <OpenThreads/Thread.h>
+#include  <OpenThreads/ScopedLock.h>
 #include "Win32BarrierPrivateData.h"
 using namespace OpenThreads;
 

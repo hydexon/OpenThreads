@@ -19,7 +19,7 @@
 #ifndef _WIN32CONDITIONPRIVATEDATA_H_
 #define _WIN32CONDITIONPRIVATEDATA_H_
 
-#include <OpenThreads/ScopedLock>
+#include <OpenThreads/ScopedLock.h>
 
 #include "Win32ThreadPrivateData.h"
 #include "HandleHolder.h"

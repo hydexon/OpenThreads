@@ -8,6 +8,12 @@ robust library and does not change often.*
 be non-intrusive (i.e. only optional additions), you are probably better
 off using the 3.3.6 release rather than the master branch.*
 
+**Christopher's modifications fork:**: I've implemented standalone atomic functions,
+rather to use the `Atomic` class, an SpinLock class implementation, and simplfied 
+Condition class called `ConditionEx`, please note those are implemented for Win32 and Posix, 
+Qt and sproc are **NOT** implemented and probably will never implemented since my needs targets modern operating system (i.e not IRIX)
+with the lowest bloat possible (i.e not Qt 5), ThreadPool remains untouched.
+
 This library is intended to provide a minimal & complete Object-Oriented (OO) 
 thread interface for C++ programmers.  It is loosely modeled on the Java thread
 API, and the POSIX Threads standards.  The architecture of the library is 

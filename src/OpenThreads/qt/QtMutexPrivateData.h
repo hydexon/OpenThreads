@@ -19,7 +19,7 @@
 #ifndef _QTMUTEXPRIVATEDATA_H_
 #define _QTMUTEXPRIVATEDATA_H_
 
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Mutex.h>
 #include <QMutex>
 
 class QtMutexPrivateData : public QMutex

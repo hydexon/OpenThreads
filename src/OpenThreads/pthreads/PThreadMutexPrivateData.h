@@ -21,7 +21,7 @@
 #define _PTHREADMUTEXPRIVATEDATA_H_
 
 #include <pthread.h>
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Mutex.h>
 
 namespace OpenThreads {
 

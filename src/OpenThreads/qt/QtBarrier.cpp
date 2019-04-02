@@ -17,8 +17,8 @@
 // ~~~~~~~~~~~
 
 #include "QtBarrierPrivateData.h"
-#include <OpenThreads/Barrier>
-#include <OpenThreads/Thread>
+#include <OpenThreads/Barrier.h>
+#include <OpenThreads/Thread.h>
 #include <OpenThreads/ScopedLock>
 #include <iostream>
 

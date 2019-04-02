@@ -20,8 +20,13 @@
 #ifndef _OPENTHREADS_CONDITION_
 #define _OPENTHREADS_CONDITION_
 
-#include <OpenThreads/Exports>
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Exports.h>
+#include <OpenThreads/Mutex.h>
+
+#if !WIN32
+# include <string.h>
+# include <pthread.h>
+#endif
 
 namespace OpenThreads {
 
@@ -87,6 +92,57 @@ private:
     void *_prvData;
 
 };
+
+    /**
+     *  @class ConditionEx
+     *  @brief  This class provides an object-oriented thread condition, but more simplified structure.
+     */
+    class OPENTHREAD_EXPORT_DIRECTIVE ConditionEx
+    {
+    public:
+        #if WIN32
+            typedef void* Handle;
+        #else
+            struct Handle 
+            {
+                // Protect critical section
+                pthread_mutex_t lock;
+
+                // Keeps track of waiters
+                pthread_cond_t condition;
+
+                // Specifies if this is an auto- or manual-reset event
+                bool manual_reset;
+
+                // "True" if signaled
+                bool is_signaled;
+
+                // Number of waiting threads
+                unsigned waiting_threads;
+            };
+        #endif
+        /// @name Construction/Destruction
+		//@{
+		explicit ConditionEx( bool bManualReset, bool bInitialState );
+		~ConditionEx();
+		//@}
+
+		/// @name Synchronization Interface
+		//@{
+		void Signal();
+		void Reset();
+		bool Wait();
+		bool Wait( unsigned int timeoutMs );
+		//@}
+
+		/// @name Data Access
+		//@{
+		inline const Handle& GetHandle() const { return m_Handle; };
+		//@}
+
+    private:
+        Handle m_Handle;
+    };
 
 }
 

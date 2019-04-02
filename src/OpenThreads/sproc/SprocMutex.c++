@@ -21,7 +21,7 @@
 #include <errno.h>
 #include <assert.h>
 
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Mutex.h>
 #include "SharedArena.h"
 #include "SprocMutexPrivateData.h"
 #include "SprocThreadPrivateActions.h"

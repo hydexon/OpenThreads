@@ -11,7 +11,7 @@
  * OpenSceneGraph Public License for more details.
 */
 
-#include <OpenThreads/Atomic>
+#include <OpenThreads/Atomic.h>
 
 #if defined(_OPENTHREADS_ATOMIC_USE_WIN32_INTERLOCKED)
 #include <windows.h>

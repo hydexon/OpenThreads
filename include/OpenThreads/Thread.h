@@ -22,7 +22,7 @@
 
 #include <sys/types.h>
 
-#include <OpenThreads/Mutex>
+#include <OpenThreads/Mutex.h>
 
 namespace OpenThreads {
 
